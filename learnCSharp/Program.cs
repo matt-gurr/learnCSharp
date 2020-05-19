@@ -50,6 +50,60 @@ namespace learnCSharp
             l = null;
         }
 
+        static void Sort(string[] args)
+        {
+            char response;
+
+            Console.WriteLine("Please let me know what kinda sort you would like (i)nsertion sort, or (b)ubble sort, or (q)uit");
+            for (; ; )
+            {
+                response = Console.ReadKey().KeyChar;
+                switch (response)
+                {
+                    case 'i':
+                    case 'I':
+                        InsertionSort();
+                        break;
+                    case 'b':
+                    case 'B':
+                        BubbleSort();
+                        break;
+                    case 'q':
+                    case 'Q':
+                        return;
+                    /* NOTREACHED */
+                    default:
+                        Console.WriteLine("Um, what are you playing at?");
+                        break;
+                }
+            }
+        }
+
+        static void BubbleSort()
+        {
+            // Do the BubbleSort dance here!
+        }
+
+        static void InsertionSort()
+        {
+            var unsortedList = new SortingList(10);
+            var sortedList = new SortingList(unsortedList.Length);
+
+            /* Let's fill the unsorted list with all sorts of junk */
+            unsortedList.Randomise();
+            unsortedList.Print();
+
+            /* This is where we do the insertion sort-- doesn't
+             * object oriented make this look easy? */
+
+            for (int i = 0; i < unsortedList.Length; i++)
+            {
+                sortedList.Insert(unsortedList.Pop());
+            }
+
+            sortedList.Print();
+        }
+
         static void bubbleSort()
         {
             int i, j;
@@ -68,16 +122,14 @@ namespace learnCSharp
                 Console.WriteLine(num);
 
             /* 
-             * Copy unsortedList into sortedList
-             */
+                * Copy unsortedList into sortedList
+                */
 
             /* 
-             * Iterate over the list, you'll need a couple of counting variables.
-             * Above, i and j are declared for you.
-             * You should know how to do a bubble sort by now, right? :)
-             */
+                * Iterate over the list, you'll need a couple of counting variables.
+                * Above, i and j are declared for you.
+                * You should know how to do a bubble sort by now, right? :)
+                */
         }
-
     }
-}
 }
