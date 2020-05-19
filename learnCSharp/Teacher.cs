@@ -7,9 +7,11 @@ namespace learnCSharp
 {
     class Teacher : Person
     {
-        public Teacher(String name) : base(name, Person.type.TEACHER)
+        String location;
+        public Teacher(String name, String location) : base(name, Person.type.TEACHER)
         {
-            /* What other properties could the Teacher have? */
+            this.location = location;
+            
         }
     }
 }
