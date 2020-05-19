@@ -49,5 +49,35 @@ namespace learnCSharp
 
             l = null;
         }
+
+        static void bubbleSort()
+        {
+            int i, j;
+            int[] unsortedList, sortedList;
+            Random random;
+            
+            unsortedList = new int[10];
+            sortedList = new int[10];
+            random = new Random();
+
+            for (i = 0; i < unsortedList.Length; i++)
+                unsortedList[i] = random.Next(50);
+
+            /* You can also do Python-style for loops */
+            foreach (int num in unsortedList)
+                Console.WriteLine(num);
+
+            /* 
+             * Copy unsortedList into sortedList
+             */
+
+            /* 
+             * Iterate over the list, you'll need a couple of counting variables.
+             * Above, i and j are declared for you.
+             * You should know how to do a bubble sort by now, right? :)
+             */
+        }
+
     }
+}
 }
